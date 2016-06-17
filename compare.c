@@ -55,7 +55,7 @@ void start(void) {
 	float startTime = (float)clock()/CLOCKS_PER_SEC;
 
 	int i;
-	for (i = 1; i < 100000000;++i) {
+	for (i = 1; i < 100000000; ++i) {
 		get(i);
 	}
 
@@ -70,7 +70,7 @@ void startIf(void) {
 	float startTime = (float)clock()/CLOCKS_PER_SEC;
 
 	int i;
-	for (i = 1; i < 100000000;++i) {
+	for (i = 1; i < 100000000; ++i) {
 		getIf(i);
 	}
 
@@ -85,7 +85,7 @@ void startIfElse(void) {
 	float startTime = (float)clock()/CLOCKS_PER_SEC;
 
 	int i;
-	for (i = 1; i < 100000000;++i) {
+	for (i = 1; i < 100000000; ++i) {
 		getIfElse(i);
 	}
 
@@ -93,7 +93,7 @@ void startIfElse(void) {
 
 	float timeElapsed = endTime - startTime;
 
-	printf("Simple getIfElse %.9f\n", timeElapsed);
+	printf("Condition getIfElse %.9f\n", timeElapsed);
 }
 
 int main(void) {

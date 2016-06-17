@@ -1,0 +1,8 @@
+language: c
+
+compiler:
+  - gcc
+
+script:
+    - gcc -o compare compare.c
+    - ./compare
