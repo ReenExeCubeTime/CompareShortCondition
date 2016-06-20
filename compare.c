@@ -11,6 +11,30 @@ float now() {
     return (float)clock()/CLOCKS_PER_SEC;
 }
 
+int even(int value) {
+    return value % 2;
+}
+
+int oneIf(int value) {
+    if (even(value)) {
+        return 1;
+    }
+
+    return 0;
+}
+
+int oneIfElse(int value) {
+    if (even(value)) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int ternary(int value) {
+    return even(value) ? 1 : 0;
+}
+
 int getIf(int value) {
 	if (value > 9000000)
 		return value;
@@ -148,6 +172,11 @@ void postIncrement(char title[]) {
 }
 
 int main(void) {
+    startCommon("Simple even", even);
+    startCommon("One simple if", oneIf);
+    startCommon("One simple if else", oneIfElse);
+    startCommon("One simple ternary", ternary);
+
 	start("Simple get");
     startCommon("Simple get", get);
 	startIf("Condition getIf");
