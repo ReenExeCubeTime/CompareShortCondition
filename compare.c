@@ -51,7 +51,7 @@ int getIfElse(int value) {
 		return value;
 }
 
-void start(void) {
+void start(char title[]) {
 	float startTime = (float)clock()/CLOCKS_PER_SEC;
 
 	for (int i = 1; i < 100000000; ++i) {
@@ -62,10 +62,10 @@ void start(void) {
 
 	float timeElapsed = endTime - startTime;
 
-	printf("Simple get %.9f\n", timeElapsed);
+    printf("%s %.9f\n", title, timeElapsed);
 }
 
-void startIf(void) {
+void startIf(char title[]) {
 	float startTime = (float)clock()/CLOCKS_PER_SEC;
 
 	for (int i = 1; i < 100000000; ++i) {
@@ -76,10 +76,10 @@ void startIf(void) {
 
 	float timeElapsed = endTime - startTime;
 
-	printf("Condition getIf %.9f\n", timeElapsed);
+    printf("%s %.9f\n", title, timeElapsed);
 }
 
-void startIfElse(void) {
+void startIfElse(char title[]) {
 	float startTime = (float)clock()/CLOCKS_PER_SEC;
 
 	for (int i = 1; i < 100000000; ++i) {
@@ -90,13 +90,13 @@ void startIfElse(void) {
 
 	float timeElapsed = endTime - startTime;
 
-	printf("Condition getIfElse %.9f\n", timeElapsed);
+	printf("%s %.9f\n", title, timeElapsed);
 }
 
 int main(void) {
-	start();
-	startIf();
-	startIfElse();
+	start("Simple get");
+	startIf("Condition getIf");
+	startIfElse("Condition getIfElse");
 
 	// your code goes here
 	return 0;
