@@ -39,3 +39,6 @@ return 'c'
     Condition getIf 0.292778015
     Condition getIfElse 0.320569992
 ```
+
+### Conclusions:
+##### Compiler optimize it - so time almost same - see [Travis](https://travis-ci.org/ReenExeCubeTime/CompareShortCondition) build
