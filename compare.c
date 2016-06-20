@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <time.h>
 
+#define delay 100000000
+
 int get(int value) {
 	return value;
 }
@@ -58,7 +60,7 @@ int getIfElse(int value) {
 void start(char title[]) {
 	float startTime = now();
 
-	for (int i = 1; i < 100000000; ++i) {
+	for (int i = 1; i < delay; ++i) {
 		get(i);
 	}
 
@@ -72,7 +74,7 @@ void start(char title[]) {
 void startIf(char title[]) {
 	float startTime = now();
 
-	for (int i = 1; i < 100000000; ++i) {
+	for (int i = 1; i < delay; ++i) {
 		getIf(i);
 	}
 
@@ -86,7 +88,7 @@ void startIf(char title[]) {
 void startIfElse(char title[]) {
 	float startTime = now();
 
-	for (int i = 1; i < 100000000; ++i) {
+	for (int i = 1; i < delay; ++i) {
 		getIfElse(i);
 	}
 
@@ -100,7 +102,7 @@ void startIfElse(char title[]) {
 void startCommon(char title[], int (*callback)(int i)) {
 	float startTime = now();
 
-	for (int i = 1; i < 100000000; ++i) {
+	for (int i = 1; i < delay; ++i) {
 		callback(i);
 	}
 
