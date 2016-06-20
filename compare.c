@@ -116,7 +116,12 @@ void startCommon(char title[], int (*callback)(int i)) {
 void preIncrement(char title[]) {
 	float startTime = now();
 
-	for (int i = 1; i < delay; ++i);
+    /**
+     * to off optimize
+     */
+    int hard;
+
+	for (int i = 1; i < delay; hard = ++i);
 
 	float endTime = now();
 
@@ -128,7 +133,12 @@ void preIncrement(char title[]) {
 void postIncrement(char title[]) {
 	float startTime = now();
 
-	for (int i = 1; i < delay; i++);
+    /**
+     * to off optimize
+     */
+    int hard;
+
+	for (int i = 1; i < delay; hard = i++);
 
 	float endTime = now();
 
