@@ -4,5 +4,5 @@ compiler:
   - gcc
 
 script:
-    - gcc -o compare compare.c
+    - gcc -o compare compare.c -std=c99
     - ./compare
