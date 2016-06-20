@@ -5,6 +5,10 @@ int get(int value) {
 	return value;
 }
 
+float now() {
+    return (float)clock()/CLOCKS_PER_SEC;
+}
+
 int getIf(int value) {
 	if (value > 9000000)
 		return value;
@@ -52,13 +56,13 @@ int getIfElse(int value) {
 }
 
 void start(char title[]) {
-	float startTime = (float)clock()/CLOCKS_PER_SEC;
+	float startTime = now();
 
 	for (int i = 1; i < 100000000; ++i) {
 		get(i);
 	}
 
-	float endTime = (float)clock()/CLOCKS_PER_SEC;
+	float endTime = now();
 
 	float timeElapsed = endTime - startTime;
 
@@ -66,13 +70,13 @@ void start(char title[]) {
 }
 
 void startIf(char title[]) {
-	float startTime = (float)clock()/CLOCKS_PER_SEC;
+	float startTime = now();
 
 	for (int i = 1; i < 100000000; ++i) {
 		getIf(i);
 	}
 
-	float endTime = (float)clock()/CLOCKS_PER_SEC;
+	float endTime = now();
 
 	float timeElapsed = endTime - startTime;
 
@@ -80,13 +84,13 @@ void startIf(char title[]) {
 }
 
 void startIfElse(char title[]) {
-	float startTime = (float)clock()/CLOCKS_PER_SEC;
+	float startTime = now();
 
 	for (int i = 1; i < 100000000; ++i) {
 		getIfElse(i);
 	}
 
-	float endTime = (float)clock()/CLOCKS_PER_SEC;
+	float endTime = now();
 
 	float timeElapsed = endTime - startTime;
 
