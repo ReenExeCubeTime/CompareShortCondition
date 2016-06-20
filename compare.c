@@ -134,7 +134,7 @@ void startCommon(char title[], int (*callback)(int i)) {
 
 	float timeElapsed = endTime - startTime;
 
-	printf("%s %.9f\n", title, timeElapsed);
+	printf("Common| %s %.9f\n", title, timeElapsed);
 }
 
 void preIncrement(char title[]) {
