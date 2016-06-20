@@ -97,10 +97,27 @@ void startIfElse(char title[]) {
 	printf("%s %.9f\n", title, timeElapsed);
 }
 
+void startCommon(char title[], int (*callback)(int i)) {
+	float startTime = now();
+
+	for (int i = 1; i < 100000000; ++i) {
+		callback(i);
+	}
+
+	float endTime = now();
+
+	float timeElapsed = endTime - startTime;
+
+	printf("%s %.9f\n", title, timeElapsed);
+}
+
 int main(void) {
 	start("Simple get");
+    startCommon("Simple get", get);
 	startIf("Condition getIf");
+    startCommon("Condition getIf", getIf);
 	startIfElse("Condition getIfElse");
+    startCommon("Condition getIfElse", getIfElse);
 
 	// your code goes here
 	return 0;
