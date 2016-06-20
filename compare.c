@@ -113,6 +113,30 @@ void startCommon(char title[], int (*callback)(int i)) {
 	printf("%s %.9f\n", title, timeElapsed);
 }
 
+void preIncrement(char title[]) {
+	float startTime = now();
+
+	for (int i = 1; i < delay; ++i);
+
+	float endTime = now();
+
+	float timeElapsed = endTime - startTime;
+
+	printf("%s %.9f\n", title, timeElapsed);
+}
+
+void postIncrement(char title[]) {
+	float startTime = now();
+
+	for (int i = 1; i < delay; i++);
+
+	float endTime = now();
+
+	float timeElapsed = endTime - startTime;
+
+	printf("%s %.9f\n", title, timeElapsed);
+}
+
 int main(void) {
 	start("Simple get");
     startCommon("Simple get", get);
@@ -120,6 +144,9 @@ int main(void) {
     startCommon("Condition getIf", getIf);
 	startIfElse("Condition getIfElse");
     startCommon("Condition getIfElse", getIfElse);
+
+    preIncrement("Pre Increment");
+    postIncrement("Post Increment");
 
 	// your code goes here
 	return 0;
